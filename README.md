@@ -130,3 +130,10 @@ $o-overlay-is-silent: false;
 * Heading titles should be as short as possible, and must not be empty.
 * Overlays should not appear on hover, and if they do there must be a 200ms dwell on the element before the overlay appears, AND it must be possible to also launch the overlay by clicking, to ensure the overlay still works on devices that lack a hoverable pointer.
 * Overlays won't appear in core experience, so should not be used for any critical functionality unless you have a fallback set for it.
+
+## Migrating from 1.X.X to 2.X.X
+
+- A dependency on [o-icons](http://github.com/financial-times/o-icons) v4 or v5 has been introduced. This will break any builds that use o-icons <v3. __Resolution__: Ideally you should upgrade to o-icons v5, but if you still need to use the old icon set (in v4) then upgrading to o-icons v4 will also work.
+- A dependency on [o-visual-effects](http://github.com/financial-times/o-visual-effects) v1 has been introduced. This will break any builds that use o-visual-effects <v1. __Resolution__: Update to v1 of o-visual-effects.
+- The mixin oOverlayCompactCloseIcon (deprecated in v1.3.0) has been removed. __Resolution__ Use the `@oOverlayCloseIcon` mixin.
+- All extends (deprecated in v1.2.0) have been removed. __Resolution__: Use the mixins instead.

@@ -173,17 +173,6 @@ Overlay.prototype.render = function() {
 		const heading = document.createElement('header');
 		heading.classList.add('o-overlay__heading');
 
-		if (this.opts.heading.title && this.opts.heading.title.trim()) {
-			const headingId = this.opts.heading.title.replace(' ', '-').toLowerCase();
-			heading.setAttribute('id', headingId);
-			wrapperEl.setAttribute('aria-labelledby', headingId);
-			const title = document.createElement('span');
-			title.setAttribute('role', 'heading');
-			title.className = 'o-overlay__title';
-			title.innerHTML = this.opts.heading.title;
-			heading.appendChild(title);
-		}
-
 		if (this.opts.heading.shaded) {
 			heading.classList.add('o-overlay__heading--shaded');
 		}
@@ -197,6 +186,17 @@ Overlay.prototype.render = function() {
 			button.setAttribute('aria-label', 'Close');
 			button.setAttribute('title', 'Close');
 			heading.appendChild(button);
+		}
+
+		if (this.opts.heading.title && this.opts.heading.title.trim()) {
+			const headingId = this.opts.heading.title.replace(' ', '-').toLowerCase();
+			heading.setAttribute('id', headingId);
+			wrapperEl.setAttribute('aria-labelledby', headingId);
+			const title = document.createElement('span');
+			title.setAttribute('role', 'heading');
+			title.className = 'o-overlay__title';
+			title.innerHTML = this.opts.heading.title;
+			heading.appendChild(title);
 		}
 
 		wrapperEl.appendChild(heading);

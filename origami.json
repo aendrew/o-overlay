@@ -50,6 +50,11 @@
 			"template": "/demos/src/tooltip.mustache",
 			"description": "Tooltip for annotating bits of UI",
 			"sass": "demos/src/overlay-with-arrow.scss"
+		},
+		{
+			"name": "modal-no-heading",
+			"template": "/demos/src/modal-no-heading.mustache",
+			"hidden": true
 		}
 	]
 }
